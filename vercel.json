@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/about-us", "destination": "/About-us.html" },
+    { "source": "/About-us", "destination": "/About-us.html" },
     { "source": "/contact-us", "destination": "/contact-us.html" },
     { "source": "/more-projects", "destination": "/more-projects.html" },
     { "source": "/our-clients", "destination": "/our-clients.html" },
