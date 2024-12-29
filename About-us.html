@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Lethabo Design Studio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+
+      header {
+        background-color: #666666;
+        color: #fff;
+        text-align: center;
+        padding: 1.5rem 0;
+      }
+
+      header img {
+        width: 50px;
+        height: 50px;
+        margin-right: 15px;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+      .about-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .about-text {
+        flex: 1;
+        font-size: 1.2rem;
+        line-height: 1.6;
+        color: #555;
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .about-text h2 {
+        font-size: 2rem;
+        color: #ff0496;
+        margin-bottom: 1rem;
+      }
+
+      .about-image {
+        flex: 1;
+        animation: fadeIn 1.2s ease-in-out;
+      }
+
+      .about-image img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .vision-mission {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+
+      .vision-mission-container {
+        flex: 1;
+        min-width: 300px;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeInUp 1s ease-in-out;
+      }
+
+      .vision-mission-container i {
+        font-size: 3rem;
+        color: #ff0496;
+        margin-bottom: 1rem;
+      }
+
+      .vision-mission-container h3 {
+        font-size: 1.5rem;
+        color: #00334e;
+        margin-bottom: 1rem;
+      }
+
+      .vision-mission-container p {
+        color: #555;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Slideshow */
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        height: 400px;
+        margin: 0 auto 2rem;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 1s ease-in-out;
+      }
+
+      .slide {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .slide.active {
+        display: block;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #000000;
+        color: #fff;
+        text-align: center;
+        padding: 1.5rem 0;
+        margin-top: 2rem;
+      }
+
+      footer a {
+        color: #ff0496;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+      }
+
+      footer a:hover {
+        color: #fff;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .about-section {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .vision-mission {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img
+        src="lethabo design studio logo transparent.png"
+        alt="Lethabo Design Studio Logo"
+      />
+      <h1>About Us</h1>
+    </header>
+
+    <div class="container">
+      <!-- About Section -->
+      <div class="about-section">
+        <div class="about-text">
+          <h2>Who We Are</h2>
+          <p>
+            Lethabo Design Studio was founded in 2024 by Lethabo Semenya, a
+            passionate and creative young graphic designer. Our studio focuses
+            on delivering unique and innovative design solutions tailored to our
+            clients' needs. We believe in empowering creativity and providing
+            opportunities to aspiring designers.
+          </p>
+        </div>
+        <div class="about-image">
+          <img src="about us.png" alt="Lethabo Design Studio Team Working" />
+        </div>
+      </div>
+
+      <!-- Vision and Mission Section -->
+      <div class="vision-mission">
+        <div class="vision-mission-container">
+          <i class="fas fa-eye"></i>
+          <h3>Our Vision</h3>
+          <p>
+            To be the leading design studio known for creativity, innovation,
+            and empowering young talent in the creative industry.
+          </p>
+        </div>
+        <div class="vision-mission-container">
+          <i class="fas fa-bullseye"></i>
+          <h3>Our Mission</h3>
+          <p>
+            To provide high-quality design services while mentoring the next
+            generation of designers and helping businesses bring their ideas to
+            life through creative solutions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Slideshow Section -->
+      <div class="slideshow-container">
+        <div class="slide active">
+          <img src="creative design.png" alt="Creative Design Work" />
+        </div>
+        <div class="slide">
+          <img src="team collab.png" alt="Team Collaboration" />
+        </div>
+        <div class="slide">
+          <img src="innovative con.png" alt="Innovative Concepts" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        <a href="index.html">&larr; Go Back to Homepage</a> | © 2024 Lethabo
+        Design Studio. All Rights Reserved.
+      </p>
+    </footer>
+
+    <script>
+      // Slideshow functionality
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
+
+      setInterval(() => {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add("active");
+      }, 4000); // 4 seconds per slide
+    </script>
+  </body>
+</html>
