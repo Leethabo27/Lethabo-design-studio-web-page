@@ -175,13 +175,17 @@
           >
         </p>
         <p>Phone: <a href="tel:+1234567890">+27 71 699 26 98</a></p>
-        <p>Address: 0152,Pretoria, South Africa</p>
+        <p>Address: 0152, Pretoria, South Africa</p>
       </div>
 
       <!-- Contact Form -->
       <div class="contact-form">
         <h3>Send Us a Message</h3>
-        <form action="#" method="POST">
+        <form
+          action="https://formspree.io/f/xjkkaavd"
+          method="POST"
+          onsubmit="return showAlert()"
+        >
           <input type="text" placeholder="Your Name" name="name" required />
           <input type="email" placeholder="Your Email" name="email" required />
           <textarea
@@ -216,5 +220,12 @@
         </a>
       </div>
     </footer>
+
+    <script>
+      function showAlert() {
+        alert("Thank you for reaching out to us! Your message has been sent successfully.");
+        return true; // Allow the form submission to proceed
+      }
+    </script>
   </body>
 </html>
