@@ -179,6 +179,64 @@
     </style>
   </head>
   <body>
+ <!-- Cookie Consent Popup -->
+    <div
+      id="cookieConsent"
+      style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        background: #5c5c5c;
+        color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1000;
+        font-size: 1rem;
+      "
+    >
+      <span
+        >We use cookies to ensure you get the best experience on our website.
+        <a href="/privacy" style="color: #ff65a3; text-decoration: underline"
+          >Learn more</a
+        >.</span
+      >
+      <button
+        id="acceptCookies"
+        style="
+          background: #ff0080;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1rem;
+        "
+      >
+        Accept
+      </button>
+    </div>
+
+    <script>
+      // Check if cookies have already been accepted
+      const isAccepted = localStorage.getItem("cookiesAccepted");
+
+      if (isAccepted) {
+        document.getElementById("cookieConsent").style.display = "none";
+      }
+
+      // Handle "Accept" button click
+      document
+        .getElementById("acceptCookies")
+        .addEventListener("click", function () {
+          localStorage.setItem("cookiesAccepted", "true"); // Store acceptance in localStorage
+          document.getElementById("cookieConsent").style.display = "none"; // Hide the popup
+        });
+    </script>
     <header>
       <img
         src="lethabo design studio logo transparent.png"
