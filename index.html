@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lethabo Design Studio</title>
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -73,9 +72,36 @@
           transform: scale(1);
         }
       }
+      .download-section {
+        background-color: #ffffff;
+        color: rgb(0, 0, 0);
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .download-section h2 {
+        color: #ff69b4;
+        margin-bottom: 1rem;
+      }
+
+      .download-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.75rem 2rem;
+        background-color: #ff69b4;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 40px;
+        font-weight: lighter;
+        transition: background 0.3s;
+      }
+
+      .download-btn:hover {
+        background-color: #ff85c1;
+      }
 
       .navbar {
-        background-color: #5c5c5c;
+        background-color: #302f2f;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
@@ -139,7 +165,7 @@
       }
 
       footer {
-        background-color: #030303;
+        background-color: #302f2f;
         color: #fff;
         padding: 20px;
         text-align: center;
@@ -178,10 +204,86 @@
           opacity: 1;
         }
       }
+
+      .section-title {
+        text-align: center;
+        margin: 40px 0 20px;
+        color: #c2185b;
+      }
+
+      .slider-container {
+        max-width: 1000px;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slide {
+        flex: 0 0 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .slide img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-buttons {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      .nav-buttons button {
+        background-color: #c2185b;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        margin: 0 5px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .nav-buttons button:hover {
+        background-color: #a0144a;
+      }
+      /* Hero Section */
+      .hero {
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+      }
+
+      #heroVideo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
- <!-- Cookie Consent Popup -->
+    <!-- Cookie Consent Popup -->
     <div
       id="cookieConsent"
       style="
@@ -238,7 +340,11 @@
           localStorage.setItem("cookiesAccepted", "true"); // Store acceptance in localStorage
           document.getElementById("cookieConsent").style.display = "none"; // Hide the popup
         });
+
+      let slideIndex = 0;
+      showSlides();
     </script>
+
     <header>
       <img
         src="lethabo design studio logo transparent.png"
@@ -262,29 +368,36 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/About-us">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/contact-us">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/more-projects">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/our-clients">Our Clients</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/team">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/services">Services</a>
-        </li>
-      </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/About-us">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact-us">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/more-projects">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/our-clients">Our Clients</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/team">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/services">Services</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
+
+    <section class="hero">
+      <video autoplay muted loop id="heroVideo">
+        <source src="lds.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
 
     <div class="content">
       <h2>Welcome to Lethabo Design Studio</h2>
@@ -329,12 +442,50 @@
         </div>
       </div>
     </div>
+    <!-- Download Profile Section -->
+    <section class="download-section">
+      <p>Get to know more about our services and past projects.</p>
+      <a href="Lethabo_Design_Profile.pdf" download class="download-btn"
+        >Download Company Profile</a
+      >
+    </section>
+    <h2 class="section-title">Recent Projects</h2>
+
+    <div class="slider-container">
+      <div class="slider-track" id="sliderTrack">
+        <div class="slide"><img src="cmpp.jpg" alt="Project 1" /></div>
+        <div class="slide"><img src="bookcvr.png" alt="Project 2" /></div>
+        <div class="slide">
+          <img src="lethabo designs.png" alt="Project 3" />
+        </div>
+        <div class="slide"><img src="setlax.jpg" alt="Project 4" /></div>
+        <div class="slide"><img src="momk.jpg" alt="Project 5" /></div>
+      </div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="moveSlide(-1)">←</button>
+      <button onclick="moveSlide(1)">→</button>
+    </div>
+
+    <script>
+      let index = 0;
+      const track = document.getElementById("sliderTrack");
+      const slides = document.querySelectorAll(".slide");
+
+      function moveSlide(direction) {
+        index += direction;
+        if (index < 0) index = slides.length - 1;
+        if (index >= slides.length) index = 0;
+        track.style.transform = `translateX(-${index * 100}%)`;
+      }
+    </script>
 
     <footer>
-      &copy; 2025 Lethabo Design Studio. All rights reserved.
+      &copy; 2024 Lethabo Design Studio. All rights reserved.
       <br />
       <a href="/privacy">Privacy Policy</a> |
-  <a href="/terms-and-conditions">Terms and Conditions</a>
+      <a href="/terms-and-conditions">Terms and Conditions</a>
       <div class="social-icons">
         <a
           href="https://www.linkedin.com/company/104641987/"
