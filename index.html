@@ -163,6 +163,43 @@
       .feature:hover .feature-img {
         transform: rotate(5deg) scale(1.05);
       }
+.cta-section {
+        background: linear-gradient(145deg, #e4bed1, #ffffff);
+        color: #c00b41;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .cta-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .cta-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta-section p {
+        font-size: 1.1rem;
+        color: #000000;
+        margin-bottom: 2rem;
+      }
+
+      .cta-button {
+        background-color: #f50049;
+        color: #ffffff;
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: lighter;
+        transition: background 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: #c4013b;
+        color: #fff;
+      }
       /* Chatbot Styling */
       .chatbot-container {
         position: fixed;
@@ -571,7 +608,17 @@
       <button onclick="moveSlide(-1)">←</button>
       <button onclick="moveSlide(1)">→</button>
     </div>
-
+ <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="cta-content">
+        <h2>Let’s Create Something Beautiful Together</h2>
+        <p>
+          From logos to websites, we bring your vision to life with bold
+          creativity. Work with a passionate designer who listens.
+        </p>
+        <a href="/contact-us" class="cta-button">Start Your Project</a>
+      </div>
+    </section>
     <script>
       let index = 0;
       const track = document.getElementById("sliderTrack");
