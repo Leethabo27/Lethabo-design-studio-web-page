@@ -163,6 +163,79 @@
       .feature:hover .feature-img {
         transform: rotate(5deg) scale(1.05);
       }
+      /* Chatbot Styling */
+      .chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+      }
+
+      .chatbot-toggle {
+        background-color: #f11154;
+        color: #fff;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      }
+
+      .chatbot-box {
+        display: none;
+        width: 320px;
+        background-color: #111;
+        color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+        padding: 1rem;
+        position: absolute;
+        bottom: 60px;
+        right: 0;
+      }
+
+      .chatbot-header {
+        font-weight: bold;
+        font-size: 16px;
+        color: #ff69b4;
+        margin-bottom: 10px;
+      }
+
+      .chatbot-content {
+        font-size: 14px;
+      }
+
+      .chatbot-content p {
+        margin: 0.5rem 0;
+      }
+
+      .chatbot-content .bot {
+        font-style: italic;
+        color: #ccc;
+      }
+
+      .chat-options {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .chat-options button {
+        background-color: #f11154;
+        color: #fff;
+        border: none;
+        padding: 8px 12px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background 0.3s;
+        text-align: left;
+      }
+
+      .chat-options button:hover {
+        background-color: #f11154;
+      }
 
       footer {
         background-color: #302f2f;
@@ -391,6 +464,34 @@
         </div>
       </div>
     </nav>
+    <!-- Chatbot Section -->
+    <div class="chatbot-container">
+      <button class="chatbot-toggle" onclick="toggleChat()">
+        💬 Chat with us
+      </button>
+      <div class="chatbot-box" id="chatBox">
+        <div class="chatbot-header">Lethabo Bot 🤖</div>
+        <div class="chatbot-content" id="chatContent">
+          <p class="bot">Hi! 👋 How can we help?</p>
+          <div class="chat-options">
+            <button onclick="chatResponse('What do you offer?')">
+              What do you offer?
+            </button>
+            <button onclick="chatResponse('Who is the founder?')">
+              Who is the founder?
+            </button>
+            <button
+              onclick="chatResponse('How long have you been in the industry?')"
+            >
+              How long?
+            </button>
+            <button onclick="chatResponse('How can I contact you?')">
+              Contact info
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="hero">
       <video autoplay muted loop id="heroVideo">
@@ -445,7 +546,7 @@
     <!-- Download Profile Section -->
     <section class="download-section">
       <p>Get to know more about our services and past projects.</p>
-     <a
+      <a
         href="Lethabo design Studio Portfolio (1).pdf"
         download
         class="download-btn"
@@ -483,7 +584,50 @@
         track.style.transform = `translateX(-${index * 100}%)`;
       }
     </script>
+    <script>
+      function toggleChat() {
+        const chatBox = document.getElementById("chatBox");
+        chatBox.style.display =
+          chatBox.style.display === "block" ? "none" : "block";
+      }
 
+      function chatResponse(question) {
+        const chatContent = document.getElementById("chatContent");
+
+        const userMessage = document.createElement("p");
+        userMessage.innerHTML = `<strong>You:</strong> ${question}`;
+        chatContent.appendChild(userMessage);
+
+        const botMessage = document.createElement("p");
+        botMessage.classList.add("bot");
+
+        switch (question) {
+          case "What do you offer?":
+            botMessage.textContent =
+              "We offer graphic design, branding, UI/UX, motion ads, and web design.";
+            break;
+          case "Who is the founder?":
+            botMessage.textContent =
+              "The founder is Lethabo Semenya, a creative mind behind Lethabo Design Studio.";
+            break;
+          case "How long have you been in the industry?":
+            botMessage.textContent =
+              "We've been in the industry for over a year and a few months.";
+            break;
+          case "How can I contact you?":
+            botMessage.innerHTML = `Email: <a href="mailto:lethabodesignstudio@outlook.com">lethabodesignstudio@outlook.com</a><br>Phone: 071 699 2698`;
+            break;
+          default:
+            botMessage.textContent = "Sorry, I don't understand that yet!";
+        }
+
+        // Simulate typing delay
+        setTimeout(() => {
+          chatContent.appendChild(botMessage);
+          chatContent.scrollTop = chatContent.scrollHeight;
+        }, 800);
+      }
+    </script>
     <footer>
       &copy; 2024 Lethabo Design Studio. All rights reserved.
       <br />
