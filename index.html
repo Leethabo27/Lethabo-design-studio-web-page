@@ -514,6 +514,48 @@
         transform: scale(1.05);
         border-color: #ff69b4;
       }
+      .stats-section {
+        background-color: #fff;
+        color: #111;
+        text-align: center;
+        padding: 70px 20px;
+      }
+
+      .stats-section h2 {
+        font-size: 2.2rem;
+        margin-bottom: 50px;
+        font-family: "Poppins", sans-serif;
+        color: #111;
+      }
+
+      .stats-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 50px;
+      }
+
+      .stat-box {
+        width: 180px;
+        padding: 20px;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-box .count {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #ff69b4;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .stat-box p {
+        font-size: 1rem;
+        color: #333;
+      }
+
       .founder-section {
         background-color: #fff;
         padding: 80px 20px;
@@ -995,6 +1037,28 @@
         </div>
       </div>
     </section>
+    <section class="stats-section" id="stats">
+      <h2>Studio in Numbers</h2>
+      <div class="stats-container">
+        <div class="stat-box">
+          <span class="count" data-target="35">0</span>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-box">
+          <span class="count" data-target="50">0</span>
+          <p>Projects Completed</p>
+        </div>
+        <div class="stat-box">
+          <span class="count" data-target="2">0</span>
+          <p>Years of Experience</p>
+        </div>
+        <div class="stat-box">
+          <span class="count" data-target="7">0</span>
+          <p>Industries Served</p>
+        </div>
+      </div>
+    </section>
+
     <!-- What Sets Us Apart Section -->
     <section class="sets-apart-section">
       <h2>What Sets Us Apart</h2>
@@ -1176,6 +1240,26 @@
           chatContent.scrollTop = chatContent.scrollHeight;
         }, 800);
       }
+    </script>
+    <script>
+      const counters = document.querySelectorAll(".count");
+
+      counters.forEach((counter) => {
+        const updateCount = () => {
+          const target = +counter.getAttribute("data-target");
+          const current = +counter.innerText;
+          const increment = target / 200;
+
+          if (current < target) {
+            counter.innerText = Math.ceil(current + increment);
+            setTimeout(updateCount, 15);
+          } else {
+            counter.innerText = target;
+          }
+        };
+
+        updateCount();
+      });
     </script>
     <footer>
       &copy; 2024 Lethabo Design Studio. All rights reserved.
